@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+#main {
+    position: relative;
+}
+
+#book-container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: beige;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+#new-book {
+    display: none;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 5px rgba(215, 220, 225, 0.6);
+    position: absolute;
+    top: 30vh;
+    left: calc(50vw - 200px);
+    z-index: 1;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.form-container h1 {
+    font-size: 1.5rem;
+    
+}
+
+.form-container input {
+    width: 80%;
+}
+
+.form-container input::placeholder {
+    text-align: center;
+}
+
+.create-btn {
+    border: none;
+    background-color: aquamarine;
+    color: white;
+    padding: 5px;    
+    border-radius: 15px;
+    width: 20%;
+}
+
+.cancel-create {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: none;
+    background-color: white;
+    font-size: 1.3rem;
+}
+
+.create-btn:hover, .cancel-create:hover, #add-book, .read-toggle:hover {
+    cursor: pointer;
+}
+
+.read-toggle {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+    text-align: start;
+}

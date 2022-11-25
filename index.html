@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Library</h1>
+      <button type="" id="add-book" onclick="openForm()">Add Book</button>
+    </header>
+    <main>
+      <div class="form-popup" id="new-book">
+        <form action="" class="form-container">
+          <h1>Create new book</h1>
+          <button class="cancel-create" onclick="closeForm()">x</button>
+          <label for="book-title">Title</label>
+          <input
+            type="text"
+            id="book-title"
+            name="title"
+            placeholder="Title of book"
+          />
+          <label for="book-author">Author</label>
+          <input
+            type="text"
+            id="book-author"
+            name="author"
+            placeholder="Name of author"
+          />
+          <label for="book-page">Pages</label>
+          <input
+            type="number"
+            min="1"
+            max="20000"
+            name="pages"
+            placeholder="# of pages"
+          />
+          <label for="read-or-not">Read?</label>
+          <input type="checkbox" name="" id="read-or-not" />
+          <button type="submit" class="create-btn" onclick="createBook()">
+            Create
+          </button>
+        </form>
+      </div>
+      <div id="book-container">
+        <div class="card">
+          <h4>Title</h4>
+          <h4>Author</h4>
+          <h5>Pages</h5>
+          <button class="read-toggle">Read</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
