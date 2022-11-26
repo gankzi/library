@@ -34,6 +34,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
     gap: 20px;
     justify-content: center;
+    text-align: center;
 }
 
 .card {
@@ -110,7 +111,7 @@ header {
     border-radius: 5px;
 	font: inherit;
 	outline: inherit;
-    text-align: start;
+    text-align: center;
 }
 
 .del-book {
@@ -119,5 +120,5 @@ header {
     border: none;
     padding: 5px;
     border-radius: 5px;
-    text-align: start;
+    text-align: center;
 }
