@@ -14,7 +14,7 @@
     </header>
     <main>
       <div class="form-popup" id="new-book">
-        <form action="" class="form-container">
+        <form id="form" action="" method="get" class="form-container">
           <h1>Create new book</h1>
           <button class="cancel-create" onclick="closeForm()">x</button>
           <label for="book-title">Title</label>
@@ -36,14 +36,13 @@
             type="number"
             min="1"
             max="20000"
+            id="book-pages"
             name="pages"
             placeholder="# of pages"
           />
           <label for="read-or-not">Read?</label>
-          <input type="checkbox" name="" id="read-or-not" />
-          <button type="submit" class="create-btn" onclick="createBook()">
-            Create
-          </button>
+          <input type="checkbox" name="read" id="read-or-not" value="true" />
+          <button type="button" form="form" class="create-btn">Create</button>
         </form>
       </div>
       <div id="book-container">
@@ -52,6 +51,7 @@
           <h4>Author</h4>
           <h5>Pages</h5>
           <button class="read-toggle">Read</button>
+          <button class="del-book">Delete</button>
         </div>
       </div>
     </main>

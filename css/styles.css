@@ -7,11 +7,25 @@ header {
     height: 10vh;
     width: 100vw;
     background-color: antiquewhite;
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #main {
     position: relative;
+}
+
+#add-book {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    border: 1px solid black;
+    background-color: gold;
+    padding: 5px;
+    border-radius: 10px;
+
 }
 
 #book-container {
@@ -28,7 +42,8 @@ header {
     grid-template-rows: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
-    height: 200px;
+    gap: 20px;
+    padding: 20px;
 }
 
 #new-book {
@@ -83,7 +98,7 @@ header {
     font-size: 1.3rem;
 }
 
-.create-btn:hover, .cancel-create:hover, #add-book, .read-toggle:hover {
+.create-btn:hover, .cancel-create:hover, #add-book, .read-toggle:hover, .del-book {
     cursor: pointer;
 }
 
@@ -94,5 +109,14 @@ header {
 	padding: 0;
 	font: inherit;
 	outline: inherit;
+    text-align: start;
+}
+
+.del-book {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
     text-align: start;
 }
