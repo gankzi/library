@@ -20,13 +20,20 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+    
 function addBookToLibrary(event) {
     let title = titleInput.value;
     let author = authorInput.value;
     let pages = pagesInput.value;
-    let read = readInput.value; 
+    let read = readInput.checked; 
 
     event.preventDefault();
+
+    if (read ==  true ) {
+        read = "Read";
+    } else {
+        read = "Not read";
+    }
 
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
@@ -60,6 +67,7 @@ function populateBooks() {
         const deleteBk = document.createElement("button");
 
         read.classList.add("read-toggle");
+        read.setAttribute("id", i);
         read.addEventListener("click", toggleRead);
         deleteBk.textContent = "Delete";
         deleteBk.classList.add("del-book");
@@ -97,12 +105,15 @@ function deleteBook(event) {
     populateBooks();
 }
 
-function toggleRead() {
-    
+function toggleRead(event) {
+    let status = event.target.innerHTML;
+
+    if (status == "Read") {
+        status = "Not Read";
+    } else {
+        status = "Read";
+    }
+
+    event.target.innerHTML = status;
 }
-
-
-
-
-
 
