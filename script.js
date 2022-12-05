@@ -8,9 +8,6 @@ let createBook = document.querySelector(".create-btn");
 
 createBook.addEventListener("click", addBookToLibrary);
 
-
-
-
 let myLibrary = [];
 
 class Book {
@@ -22,7 +19,6 @@ class Book {
  };
 }
 
-    
 function addBookToLibrary(event) {
     let title = titleInput.value;
     let author = authorInput.value;
