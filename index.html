@@ -23,14 +23,18 @@
             id="book-title"
             name="title"
             placeholder="Title of book"
+            required
           />
+          <span class="error" id="error-title"></span>
           <label for="book-author">Author</label>
           <input
             type="text"
             id="book-author"
             name="author"
             placeholder="Name of author"
+            required
           />
+          <span class="error" id="error-author"></span>
           <label for="book-page">Pages</label>
           <input
             type="number"
@@ -39,7 +43,9 @@
             id="book-pages"
             name="pages"
             placeholder="# of pages"
+            required
           />
+          <span class="error" id="error-pages"></span>
           <label for="read-or-not">Read?</label>
           <input
             type="checkbox"

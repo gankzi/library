@@ -5,8 +5,29 @@ let authorInput = document.querySelector("#book-author");
 let pagesInput = document.querySelector("#book-pages");
 let readInput = document.querySelector("#read-or-not");
 let createBook = document.querySelector(".create-btn");
+let errorMsgTitle = document.querySelector("#error-title");
+let errorMsgAuthor = document.querySelector("#error-author");
+let errorMsgPages = document.querySelector("#error-pages");
 
-createBook.addEventListener("click", addBookToLibrary);
+createBook.addEventListener("click", (event) => { 
+    if (!titleInput.validity.valid || !authorInput.validity.valid || !pagesInput.validity.valid) {
+        showError();
+        event.preventDefault();
+    } else {
+    event.preventDefault();
+    addBookToLibrary();
+    };
+});
+
+function showError() {
+    if(titleInput.validity.valueMissing) {
+        errorMsgTitle.textContent = "Must input title of the book";
+    } if (authorInput.validity.valueMissing) {
+        errorMsgAuthor.textContent = "Must input author of the book";
+    } if (pagesInput.validity.valueMissing) {
+        errorMsgPages.textContent = "Must input # of pages";
+    }
+}
 
 let myLibrary = [];
 
@@ -19,13 +40,12 @@ class Book {
  };
 }
 
-function addBookToLibrary(event) {
+function addBookToLibrary() {
     let title = titleInput.value;
     let author = authorInput.value;
     let pages = pagesInput.value;
     let read = readInput.checked; 
 
-    event.preventDefault();
 
     if (read ==  true ) {
         read = "Read";
@@ -43,6 +63,9 @@ function addBookToLibrary(event) {
 
 
 function openForm() {
+    errorMsgTitle.textContent = "";
+    errorMsgAuthor.textContent = "";
+    errorMsgPages.textContent = "";
     document.querySelector("#new-book").style.display = "block";
 }
 
@@ -113,5 +136,4 @@ function toggleRead(event) {
     }
 
     event.target.innerHTML = status;
-}
-
+};
